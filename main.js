@@ -1,8 +1,8 @@
 const screen1 = document.querySelector(".screen1")
 const screen2 = document.querySelector(".screen2")
 
-const randomNumber = Math.round(Math.random()*10) // numeros aleatorios e inteiros
 let acertos = 1
+const randomNumber = Math.round(Math.random()*10) // numeros aleatorios e inteiros
 
 function handleTryClick(event){
     event.preventDefault()
@@ -12,7 +12,7 @@ function handleTryClick(event){
     if(Number(inputNumber.value) == randomNumber){
        screen1.classList.add("hide") //esconder a primeira tela
         screen2.classList.remove("hide") // aparecer a segunda tela
-
+        randomNumber = Math.round(Math.random()*10) // reseta número aleatório
         document.querySelector(".screen2 h2").innerText = ` acertou em ${acertos} tentativas` // mostrar o resultado
     }
 
